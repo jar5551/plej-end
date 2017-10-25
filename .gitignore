@@ -44,3 +44,4 @@ bower_components/
 build/
 dist/
 /app/.tmp/
+public/

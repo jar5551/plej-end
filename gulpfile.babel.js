@@ -23,7 +23,7 @@ import {create as bsCreate} from 'browser-sync';
 const browserSync = bsCreate();
 const dirs = {
   app: 'app',
-  dist: 'dist',
+  dist: 'public',
   nodeModules: './node_modules'
 };
 
