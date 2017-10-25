@@ -1,8 +1,10 @@
 /**
  * Created by jarek on 01/04/2017.
  */
+'use strict';
 
 import jQuery from 'jquery';
+import * as AOS from 'aos';
 
 const $ = jQuery;
 window.jQuery = window.$ = $;
@@ -40,6 +42,17 @@ class Main {
       element.hide();
     }, 400);
   }
+
+  /*static async wait(fn, time) {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        if(typeof fn === Function) {
+          fn();
+        }
+        return resolve();
+      }, time);
+    });
+  }*/
 }
 
 class Text {
@@ -99,17 +112,27 @@ class Scene2 {
     for(let i = 1; i<=60; i++) {
       this.fillPhotos(i);
     }
+
+    setTimeout(() => {
+      AOS.refreshHard();
+      window.dispatchEvent(new Event('resize'));
+    }, 100);
   }
 
   fillPhotos(i) {
-    $('#photos').append(`<div class="photo photo${i} col-4">
-      <img src="/assets/images/cropped/photo${i}.jpg" alt="">
+    $('#photos').append(`
+    <div class="col-6">
+      <div class="photo photo${i}" data-aos="fade-up" data-aos-anchor-placement="top-center">
+        <img src="/assets/images/cropped/photo${i}.jpg" alt="">
+      </div>
     </div>`);
   }
 
 }
 
 $(document).ready(() => {
+  AOS.init();
+
   setTimeout(() => {
     const main = new Main('main');
     const logoHero = $('#logoHero');

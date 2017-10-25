@@ -4,6 +4,7 @@
 @import "animate.css/animate";
 @import url('https://fonts.googleapis.com/css?family=Quicksand:400,700&subset=latin-ext');
 @import "fonts";
+@import "aos/dist/aos";
 
 @keyframes caret {
   0% {
@@ -261,13 +262,17 @@ body {
 
     .photo {
       @include position();
-      display: inline-block;
-      padding: 1% 1% 6% 1%;
+      padding: 2% 2% 12% 2%;
+      display: block;
+      width: 80%;
+      margin: auto;
+      max-width: 800px;
       //width: 33%;
+      margin-bottom: 30%;
 
       @for $i from 1 through 60 {
         &.photo#{$i} {
-          @include transform(rotate(25 - random(50) + deg));
+          @include transform(rotate(25 - random(50) + deg) translate(6 - random(12) + %, 6 - random(12) + %));
         }
       }
 
@@ -289,12 +294,34 @@ body {
         background-color: #ffffff;
       }
 
+      &:hover {
+        z-index: 2;
+        img {
+          @include transform(scale(1.5));
+
+        }
+      }
+
       img {
         @include position();
+        @include transition(all 250ms ease);
         z-index: 2;
         width: 100%;
+
       }
     }
+  }
+
+  #lastPhoto {
+    img {
+      max-width: 80%;
+      margin: auto;
+      display: block;
+    }
+  }
+
+  #finish {
+    padding-bottom: 5rem;
   }
 
   #background {
