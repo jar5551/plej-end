@@ -1,0 +1,61 @@
+{
+  "name": "small-project-starter",
+  "version": "1.0.0",
+  "description": "Starter pack designed for small projects",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp serve",
+    "build": "gulp build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jar5551/small-project-starter.git"
+  },
+  "keywords": [
+    "small",
+    "starter",
+    "starterpack",
+    "gulp",
+    "es6",
+    "sass"
+  ],
+  "author": "Jarosław Frydrych",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jar5551/small-project-starter/issues"
+  },
+  "homepage": "https://github.com/jar5551/small-project-starter#readme",
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-core": "^6.24.0",
+    "babel-preset-es2015": "^6.24.0",
+    "babelify": "^7.3.0",
+    "browser-sync": "^2.18.8",
+    "browserify": "^14.1.0",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-browserify": "^0.5.1",
+    "gulp-cache": "^0.4.6",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^3.2.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.5.0",
+    "gulp-uglify": "^2.1.2",
+    "gulp-useref": "^3.1.2",
+    "path": "^0.12.7",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0",
+    "watchify": "^3.9.0"
+  },
+  "dependencies": {
+    "animate.css": "^3.5.2",
+    "bootstrap": "^4.0.0-alpha.6",
+    "bourbon": "^4.3.3",
+    "jquery": "^3.2.1",
+    "normalize.css": "^6.0.0",
+    "tether": "^1.4.0"
+  }
+}

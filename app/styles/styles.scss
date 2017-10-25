@@ -1,0 +1,295 @@
+@import "bootstrap/scss/bootstrap";
+@import "normalize.css/normalize";
+@import "bourbon/app/assets/stylesheets/bourbon";
+@import "animate.css/animate";
+@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700&subset=latin-ext');
+@import "fonts";
+
+@keyframes caret {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes caret {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes pointer {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .4;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes pointer {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: .4;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes plejColors {
+  12.5% {
+    color: #283891;
+  }
+
+  25% {
+    color: #0e76bc;
+  }
+
+  37.5% {
+    color: #f1592a;
+  }
+
+  50% {
+    color: #662d91;
+  }
+
+  62.5% {
+    color: #ed1c24;
+  }
+
+  75% {
+    color: #fbc22c;
+  }
+
+  87.5% {
+    color: #f7941d;
+  }
+
+  100% {
+    color: #ed217c;
+  }
+}
+
+@-webkit-keyframes plejColors {
+  12.5% {
+    color: #283891;
+  }
+
+  25% {
+    color: #0e76bc;
+  }
+
+  37.5% {
+    color: #f1592a;
+  }
+
+  50% {
+    color: #662d91;
+  }
+
+  62.5% {
+    color: #ed1c24;
+  }
+
+  75% {
+    color: #fbc22c;
+  }
+
+  87.5% {
+    color: #f7941d;
+  }
+
+  100% {
+    color: #ed217c;
+  }
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.typing {
+  &:after {
+    @include animation-name(caret);
+    @include animation-duration(800ms);
+    @include animation-timing-function(ease);
+    @include animation-iteration-count(infinite);
+    content: '|';
+  }
+}
+
+.showing {
+  @include animation-name(fadeIn);
+  @include animation-duration(500ms);
+  @include animation-timing-function(ease);
+  @include animation-iteration-count(infinite);
+}
+
+.hiding {
+  @include animation-name(fadeOut);
+  @include animation-duration(500ms);
+  @include animation-timing-function(ease);
+  @include animation-iteration-count(once);
+}
+
+#main {
+  height: 100%;
+  background-color: black;
+  color: white;
+
+  #hero {
+    height: 100%;
+
+    #logoHero {
+      @include position();
+
+      #timeTo {
+        font-size: 2rem;
+      }
+
+      #pointer {
+        .icon-pointer {
+          @include position(absolute, 2.5rem 0 null 0);
+          @include transform(rotate(20deg));
+          @include animation-name(pointer);
+          @include animation-duration(1s);
+          @include animation-timing-function(ease);
+          @include animation-iteration-count(infinite);
+          font-size: 4rem;
+          margin: auto;
+          width: 3.5rem;
+        }
+      }
+
+      &.active {
+        cursor: pointer;
+
+        &:hover {
+          #timeTo {
+            @include animation-name(plejColors);
+            @include animation-duration(1s);
+            @include animation-timing-function(linear);
+            @include animation-iteration-count(infinite);
+            @include transition(none);
+          }
+        }
+      }
+    }
+  }
+
+  .container {
+    height: 100%;
+
+    h1, h5 {
+      margin: 0;
+    }
+
+    h1 {
+      margin-top: 1em;
+    }
+    h5 {
+      margin-bottom: 2em;
+    }
+
+  }
+}
+
+#scene2 {
+  @include position();
+  height: 100%;
+  min-height: 100%;
+
+  .scroll-down {
+    @include position(absolute, null 0 1rem 0);
+    @include triangle(2rem, #0e76bc, down);
+    margin: auto;
+
+  }
+
+  .hero {
+    height: 100%;
+
+    .container {
+      height: 100%;
+
+      h1 {
+        font-weight: 700;
+      }
+
+    }
+  }
+
+  #photos {
+    height: 100%;
+    min-height: 100%;
+
+    .photo {
+      @include position();
+      display: inline-block;
+      padding: 1% 1% 6% 1%;
+      width: 33%;
+
+      &:before {
+        @include position(absolute, 0 0 0 0);
+        -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, .2);
+        -moz-box-shadow: 0 0 30px rgba(0, 0, 0, .2);
+        box-shadow: 0 0 30px rgba(0, 0, 0, .2);
+        content: '';
+        z-index: -1;
+        display: block;
+      }
+
+      &:after {
+        @include position(absolute, 0 0 0 0);
+        z-index: 1;
+        content: '';
+        background-color: #ffffff;
+      }
+
+      img {
+        @include position();
+        z-index: 2;
+        width: 100%;
+      }
+    }
+  }
+
+  #background {
+    height: 100%;
+    min-height: 100%;
+
+    .triangle {
+      @include triangle(12px, gray, down);
+
+    }
+  }
+}
