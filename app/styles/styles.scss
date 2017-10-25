@@ -245,6 +245,13 @@ body {
         font-weight: 700;
       }
 
+      .text {
+        width: 100%;
+        text-align: center;
+      }
+
+
+
     }
   }
 
@@ -256,7 +263,14 @@ body {
       @include position();
       display: inline-block;
       padding: 1% 1% 6% 1%;
-      width: 33%;
+      //width: 33%;
+
+      @for $i from 1 through 60 {
+        &.photo#{$i} {
+          @include transform(rotate(25 - random(50) + deg));
+        }
+      }
+
 
       &:before {
         @include position(absolute, 0 0 0 0);

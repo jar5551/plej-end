@@ -69,10 +69,12 @@ class Text {
       return;
 
     setTimeout(() => {
-      this.typedText += this.text[this.i];
-      this.i++;
-      this.setText(this.typedText);
-      this.type();
+      if(typeof this.text[this.i] !== 'undefined') {
+        this.typedText += this.text[this.i];
+        this.i++;
+        this.setText(this.typedText);
+        this.type();
+      }
     }, this.variableSpeed(this.speed));
   }
 
@@ -100,7 +102,7 @@ class Scene2 {
   }
 
   fillPhotos(i) {
-    $('#photos').append(`<div class="photo photo${i}">
+    $('#photos').append(`<div class="photo photo${i} col-4">
       <img src="/assets/images/cropped/photo${i}.jpg" alt="">
     </div>`);
   }
