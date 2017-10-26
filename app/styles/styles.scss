@@ -270,7 +270,7 @@ body {
       //width: 33%;
       margin-bottom: 30%;
 
-      @for $i from 1 through 60 {
+      @for $i from 1 through 78 {
         &.photo#{$i} {
           @include transform(rotate(25 - random(50) + deg) translate(6 - random(12) + %, 6 - random(12) + %));
         }
